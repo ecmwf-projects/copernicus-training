@@ -1,4 +1,4 @@
-# Training on data from the Copernicus Climate Change (C3S) and Atmosphere Monitoring Service (CAMS)
+# Training on data from the Copernicus Climate Change Service (C3S) and Atmosphere Monitoring Service (CAMS)
 
 This repository hosts Jupyter notebook training material for the [Copernicus Climate Change Service (C3S)](https://climate.copernicus.eu/) and the [Copernicus Atmosphere Monitoring Service (CAMS)](https://atmosphere.copernicus.eu/). 
 
