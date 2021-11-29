@@ -11,9 +11,8 @@ The course is structured in two main parts and each part contains introduction a
 
 ### Training on C3S data
 
-#### Introduction and data overview notebooks
+#### Introduction to the Climate Data Store (CDS)
 * [100 - Climate Data Store - Introduction](./100_climate_data_store_intro.ipynb)
-* [101 - C3S data - Overview](./101_c3s_data_intro.ipynb)
 
 #### Application examples - Climate reanalysis data
 * [111 - Climate reanalysis - Climatologies and anomalies](./111_c3s_climatologies_anomalies.ipynb)
@@ -45,8 +44,8 @@ The course is structured in two main parts and each part contains introduction a
 ## How to use these training modules
 This training material is made freely available on the [ecmwf-projects](https://github.com/ecmwf-projects) Github space under a [Apache 2.0 license](./LICENSE). There are several ways how you can use these training modules:
 * [**nbviewer**](https://nbviewer.org/github/ecmwf-projects/copernicus-training/blob/master/000_index.ipynb) - Static and good rendering of the notebooks
-* [**Colab**]()
-* [**Binder**]([![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ecmwf-projects/copernicus-training/HEAD))
+* [**Colab**](https://colab.research.google.com/github/ecmwf-projects/copernicus-training/blob/master/000_index.ipynb)
+* [![Binder](https://mybinder.org/badge_logo.svg)](https://hub-binder.mybinder.ovh/user/ecmwf-projects--rnicus-training-ulg9z83u/lab/tree/000_index.ipynb)
 * **Clone this repo** and run the notebooks on your local Jupyter notebook server. If you wish you let run the material locally, you can go to the next section, which describes how to reproduce the setup on your local machine.
 
 
