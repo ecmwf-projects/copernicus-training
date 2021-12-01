@@ -45,14 +45,5 @@ The course is structured in two main parts and each part contains introduction a
 This training material is made freely available on the [ecmwf-projects](https://github.com/ecmwf-projects) Github space under a [Apache 2.0 license](./LICENSE). There are several ways how you can use these training modules:
 * [**nbviewer**](https://nbviewer.org/github/ecmwf-projects/copernicus-training/blob/master/000_index.ipynb) - Static and good rendering of the notebooks
 * [**Colab**](https://colab.research.google.com/github/ecmwf-projects/copernicus-training/blob/master/000_index.ipynb)
-* [![Binder](https://mybinder.org/badge_logo.svg)](https://hub-binder.mybinder.ovh/user/ecmwf-projects--rnicus-training-ulg9z83u/lab/tree/000_index.ipynb)
-* **Clone this repo** and run the notebooks on your local Jupyter notebook server. If you wish you let run the material locally, you can go to the next section, which describes how to reproduce the setup on your local machine.
-
-
-## Reproduce the training environment locally
-In case you wish to reproduce the course modules locally on your computer, you will require the following Python version and Python packages:
-* Python version: **Python3.8**
-* Python packages: see requirements.txt
-
-You can install the required Python packages with the following command in a terminal: `pip install -r requirements.txt`.
-
+* [**Binder**](https://hub-binder.mybinder.ovh/user/ecmwf-projects--rnicus-training-ulg9z83u/lab/tree/000_index.ipynb)
+* [**Kaggle**](https://kaggle.com/kernels/welcome?src=https://github.com/ecmwf-projects/copernicus-training/blob/master/000_index.ipynb)
