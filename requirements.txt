@@ -1,0 +1,10 @@
+cdsapi
+numpy
+pandas
+xarray
+netCDF4
+matplotlib
+cartopy
+cfgrib
+eccodes
+ffmpeg
