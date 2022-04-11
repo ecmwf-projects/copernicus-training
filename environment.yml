@@ -1,0 +1,14 @@
+name: copernicus-training
+channels:
+  - conda-forge
+dependencies:
+  - cdsapi
+  - numpy
+  - pandas
+  - xarray
+  - matplotlib
+  - cartopy
+  - cfgrib
+  - eccodes
+  - seaborn
+  - ffmpeg
