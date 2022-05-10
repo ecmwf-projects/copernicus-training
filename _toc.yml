@@ -1,0 +1,20 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+ - caption: Climate Data Store
+   chapters:
+   - file: 00 Climate Data Store
+ - caption: Reanalysis Tutorials
+   chapters:
+   - file: 01 Climatology
+   - file: 02 Climate Indices
+   - file: 03 Heatwave Analysis
+ - caption: Tutorials on Climate Projections
+   chapters:
+   - file: 04 Climate Projections CMIP6
+   - file: 05 Climate Projections CORDEX
+
+
