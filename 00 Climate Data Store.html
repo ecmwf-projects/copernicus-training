@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Data Store Tutorial &#8212; C3S Training</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Climatologies" href="01%20Climatology.html" />
+    <link rel="prev" title="Copernicus Climate Change Service (C3S) Data Tutorials" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/LogoLine_C3S.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">C3S Training</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Copernicus Climate Change Service (C3S) Data Tutorials
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Climate Data Store
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Climate Data Store Tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reanalysis Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20Climatology.html">
+   Climatologies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02%20Climate%20Indices.html">
+   Climate Indices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03%20Heatwave%20Analysis.html">
+   Heatwave analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials on Climate Projections
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04%20Climate%20Projections%20CMIP6.html">
+   Climate Projections (CMIP6)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05%20Climate%20Projections%20CORDEX.html">
+   Climate Projections (CORDEX)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/00 Climate Data Store.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/stewartchrisecmwf/jupyterbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/stewartchrisecmwf/jupyterbook/issues/new?title=Issue%20on%20page%20%2F00 Climate Data Store.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/stewartchrisecmwf/jupyterbook.git/main/v2/gh/stewartchrisecmwf/jupyterbook/main?urlpath=tree/00 Climate Data Store.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outline">
+   Outline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-access-the-notebook">
+   How to access the notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about">
+   About
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-retrieval">
+   Data retrieval
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-data-interactively-via-the-cds-web-interface">
+     Access data interactively via the CDS web interface
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filter-and-select-a-dataset">
+       Filter and select a dataset
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#submit-the-download-data-form">
+       Submit the
+       <em>
+        Download data
+       </em>
+       form
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-data-programmatically-with-the-cds-api">
+     Access data programmatically with the CDS API
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-the-cds-api-key">
+       Install the CDS API key
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#alternative-set-cds-api-credentials-manually">
+       Alternative: Set CDS API credentials manually
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-the-cds-api-client">
+       Install the CDS API client
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-the-cds-api-client-for-data-access">
+       Use the CDS API client for data access
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-resources">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-data-request">
+   Example data request
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-id-era5-land-hourly-a-example-era5-land-hourly-data-from-1950-to-present">
+     <a id="era5-land_hourly">
+     </a>
+     Example:
+     <strong>
+      ERA5-Land hourly data from 1950 to present
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Climate Data Store Tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outline">
+   Outline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-access-the-notebook">
+   How to access the notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about">
+   About
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-retrieval">
+   Data retrieval
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-data-interactively-via-the-cds-web-interface">
+     Access data interactively via the CDS web interface
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filter-and-select-a-dataset">
+       Filter and select a dataset
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#submit-the-download-data-form">
+       Submit the
+       <em>
+        Download data
+       </em>
+       form
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-data-programmatically-with-the-cds-api">
+     Access data programmatically with the CDS API
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-the-cds-api-key">
+       Install the CDS API key
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#alternative-set-cds-api-credentials-manually">
+       Alternative: Set CDS API credentials manually
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-the-cds-api-client">
+       Install the CDS API client
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-the-cds-api-client-for-data-access">
+       Use the CDS API client for data access
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-resources">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-data-request">
+   Example data request
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-id-era5-land-hourly-a-example-era5-land-hourly-data-from-1950-to-present">
+     <a id="era5-land_hourly">
+     </a>
+     Example:
+     <strong>
+      ERA5-Land hourly data from 1950 to present
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><img alt="logo" src="_images/LogoLine_horizon_C3S.png" /></p>
+<br><div class="tex2jax_ignore mathjax_ignore section" id="climate-data-store-tutorial">
+<h1>Climate Data Store Tutorial<a class="headerlink" href="#climate-data-store-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This notebook provides you an introduction to the Copernicus Climate Data Store (CDS), an overview of the type of data that can be accessed and gives practical examples how to access and retrieve data from the CDS.</p>
+<div class="section" id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>1 - About</p></li>
+<li><p>2 - C3S data retrieval</p>
+<ul>
+<li><p>2.1 - Access data interactively via the CDS web interface</p></li>
+<li><p>2.2 - Access data programmatically with the CDS API</p></li>
+<li><p>2.3 - Further resources</p></li>
+</ul>
+</li>
+<li><p>3 - Example data request</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-access-the-notebook">
+<h2>How to access the notebook<a class="headerlink" href="#how-to-access-the-notebook" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial is in the form of a <a class="reference external" href="https://jupyter.org/">Jupyter notebook</a>. You will not need to install any software for the training as there are a number of free cloud-based services to create, edit, run and export Jupyter notebooks such as this. Here are some suggestions (simply click on one of the links below to run the notebook):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Binder</p></th>
+<th class="text-align:center head"><p>Kaggle</p></th>
+<th class="text-align:center head"><p>Colab</p></th>
+<th class="text-align:center head"><p>NBViewer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><a class="reference external" href="https://mybinder.org/v2/gh/ecmwf-projects/copernicus-training/HEAD?urlpath=lab/tree/C3S_climate-data-store.ipynb"><img alt="Binder" src="https://mybinder.org/badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://kaggle.com/kernels/welcome?src=https://github.com/ecmwf-projects/copernicus-training/blob/master/C3S_climate-data-store.ipynb"><img alt="Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://colab.research.google.com/github/ecmwf-projects/copernicus-training/blob/master/C3S_climate-data-store"><img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+<td class="text-align:center"><p><a class="reference external" href="https://nbviewer.jupyter.org/github/ecmwf-projects/copernicus-training/blob/master/C3S_climate-data-store.ipynb"><img alt="NBViewer" src="https://raw.githubusercontent.com/ecmwf-projects/copernicus-training/master/img/nbviewer_badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>(Binder may take some time to load, so please be patient!)</p></td>
+<td class="text-align:center"><p>(will need to login/register, and switch on the internet via <em>settings</em>)</p></td>
+<td class="text-align:center"><p>(will need to run the command <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">cartopy</span></code> before importing the libraries)</p></td>
+<td class="text-align:center"><p>(this will not run the notebook, only render it)</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you would like to run this notebook in your own environment, we suggest you install <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">Anaconda</a>, which contains most of the libraries you will need. You will also need to install <a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray</a> for working with multidimensional data in netcdf files, and the CDS API (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cdsapi</span></code>) for downloading data programatically from the CDS.</p>
+<hr></div>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://cds.climate.copernicus.eu/">Copernicus Climate Data Store (CDS)</a> is the data access portal of the <a class="reference external" href="https://climate.copernicus.eu/">Copernicus Climate Change Service (C3S)</a> and offers access to <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">applications</span></code> about the Earth’s past, present and future climate.</p>
+<p><img alt="logo" src="_images/cds_landing_page.png" /></p>
+</div>
+<div class="section" id="data-retrieval">
+<h2>Data retrieval<a class="headerlink" href="#data-retrieval" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to access data from the Copernicus Climate Data Store (CDS):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#access_manual">interactively</a> via the CDS web interface, or</p></li>
+<li><p><a class="reference external" href="#access_programmatic">programmatically</a> with the CDS API</p></li>
+</ul>
+<div class="section" id="access-data-interactively-via-the-cds-web-interface">
+<h3>Access data interactively via the CDS web interface<a class="headerlink" href="#access-data-interactively-via-the-cds-web-interface" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">CDS</span> <span class="pre">web</span> <span class="pre">interface</span></code> allows you to interactively <code class="docutils literal notranslate"><span class="pre">browse</span></code>, <code class="docutils literal notranslate"><span class="pre">select</span></code> and <code class="docutils literal notranslate"><span class="pre">download</span></code> datasets offered by the CDS. First, under <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#%21/search?type=dataset">Datasets</a>, you can browse and select the dataset you are interested in. In a second step, you can then specify details of the data download form you wish to submit.</p>
+<div class="section" id="filter-and-select-a-dataset">
+<h4>Filter and select a dataset<a class="headerlink" href="#filter-and-select-a-dataset" title="Permalink to this headline">¶</a></h4>
+<p>As a first step, you can <code class="docutils literal notranslate"><span class="pre">browse</span></code> and <code class="docutils literal notranslate"><span class="pre">filter</span></code> the dataset you are interested in. The <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#%21/search?type=dataset">Datasets</a> interface allows you either to select data based on different categories, e.g. <code class="docutils literal notranslate"><span class="pre">Product</span> <span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">domain</span></code>, <code class="docutils literal notranslate"><span class="pre">Spatial</span> <span class="pre">/</span> <span class="pre">Temporal</span> <span class="pre">coverage</span></code>, but also offers a free text search. The list of datasets in the main window allows you to select the dataset you are interested in.</p>
+<br><p><img alt="logo" src="_images/cds_web_interface_1.png" /></p>
+<br><p>Once you selected a dataset, you then get redirected to a data description section, which provides you an overview of the chosen dataset as well as the option to specify the dataset you would like to download and to also to submit the <code class="docutils literal notranslate"><span class="pre">&quot;Download</span> <span class="pre">data&quot;</span> <span class="pre">form</span></code>.</p>
+<br></div>
+<div class="section" id="submit-the-download-data-form">
+<h4>Submit the <em>Download data</em> form<a class="headerlink" href="#submit-the-download-data-form" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">description</span></code> section (see 1) provides you an overview of the dataset, including a list of variables that are available. Under the tab <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">data</span></code>, the <code class="docutils literal notranslate"><span class="pre">&quot;Download</span> <span class="pre">data&quot;</span> <span class="pre">form</span></code> opens (see 2) which allows you to  interactively filter the dataset based on specific keywords, e.g.:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Product</span> <span class="pre">type</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Variable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Year</span> <span class="pre">/</span> <span class="pre">Month</span> <span class="pre">/</span> <span class="pre">Time</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Geographical</span> <span class="pre">area</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Format</span></code></p></li>
+</ul>
+<p>At the end of the <code class="docutils literal notranslate"><span class="pre">&quot;Download</span> <span class="pre">data&quot;</span> <span class="pre">form</span></code>, you get three options: <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">API</span> <span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Toolbox</span> <span class="pre">request</span></code> and <code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">Form</span></code>. If you want to download the data interactively, the data requests will be executed as soon as you click on the <code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">Form</span></code> button.</p>
+<p><strong>Note:</strong> You need to be logged into the ADS portal and you have to accept the Terms and Conditions of the dataset before being able to download data.</p>
+<p>You will need the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">API</span> <span class="pre">request</span></code>, if you want to request data programmatically. See <a class="reference external" href="#access_programmatic">Section 2.2</a> for further information. You will need the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Toolbox</span> <span class="pre">request</span></code>  if you want to request data via the CDS Toolbox. Learn more about the CDS Toolbox <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#%21/toolbox">here</a>.</p>
+<div class="alert alert-block alert-success">
+<b>NOTE</b>: <br>
+    Under the tab <code>Your requests</code> in the main menu, you can monitor the status of your data requests.</div>
+<br><p><img alt="logo" src="_images/cds_data_description_download_form.png" /></p>
+<br></div>
+</div>
+<div class="section" id="access-data-programmatically-with-the-cds-api">
+<h3>Access data programmatically with the CDS API<a class="headerlink" href="#access-data-programmatically-with-the-cds-api" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Climate</span> <span class="pre">Data</span> <span class="pre">Store</span> <span class="pre">Application</span> <span class="pre">Program</span> <span class="pre">Interface</span> <span class="pre">(CDS</span> <span class="pre">API)</span></code> is a Python library which allows you to access data from the CDS programmatically. The library is available for both Python versions, Python 2.7.x and Python 3, but we recommend to use the library under Python 3. In order to use the CDS API, follow the steps below:</p>
+<div class="section" id="install-the-cds-api-key">
+<h4>Install the CDS API key<a class="headerlink" href="#install-the-cds-api-key" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cds.climate.copernicus.eu/#%21/home">Self-register</a> at the CDS registration page (if you do not have an account yet)</p></li>
+<li><p><a class="reference external" href="https://cds.climate.copernicus.eu/user/login">Login</a> to the CDS portal and go to the <a class="reference external" href="https://cds.climate.copernicus.eu/api-how-to">api-how-to page</a></p></li>
+<li><p>Copy the CDS API key displayed in the black terminal window in a file under <code class="docutils literal notranslate"><span class="pre">$HOME/.cdsapirc</span></code></p></li>
+</ul>
+<p><strong>Note:</strong> You find your CDS API key displayed in the black terminal box under the section <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">the</span> <span class="pre">CDS</span> <span class="pre">API</span> <span class="pre">key</span></code>. If you do not see a URL or key appear in the black terminal box, please refresh your browser tab.</p>
+<p><img alt="logo" src="_images/cds_api_key.png" /></p>
+<p>The code below creates the file under your current working directory. Make sure to replace the <code class="docutils literal notranslate"><span class="pre">################</span></code> with your personal <code class="docutils literal notranslate"><span class="pre">CDS</span> <span class="pre">API</span> <span class="pre">key</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./.cdsapirc
+
+<span class="n">url</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">cds</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">copernicus</span><span class="o">.</span><span class="n">eu</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v2</span>
+<span class="n">key</span><span class="p">:</span> <span class="c1">##############################</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting ./.cdsapirc
+</pre></div>
+</div>
+</div>
+</div>
+<br></div>
+<div class="section" id="alternative-set-cds-api-credentials-manually">
+<h4>Alternative: Set CDS API credentials manually<a class="headerlink" href="#alternative-set-cds-api-credentials-manually" title="Permalink to this headline">¶</a></h4>
+<p>Alternatively, you can also define variables for <code class="docutils literal notranslate"><span class="pre">url</span></code> and <code class="docutils literal notranslate"><span class="pre">key</span></code>. These variables can then be set when you define the <code class="docutils literal notranslate"><span class="pre">cdsapi.Client(url=URL,</span> <span class="pre">key=KEY)</span></code> in your script (see next section for the different components of a data retrieval request).</p>
+<p><strong>Please note:</strong> in the workflow notebooks, we will use this modality and set manually the CDS API key information for the data retrievals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;https://cds.climate.copernicus.eu/api/v2&#39;</span>
+<span class="n">KEY</span> <span class="o">=</span> <span class="s1">&#39;############################&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br></div>
+<div class="section" id="install-the-cds-api-client">
+<h4>Install the CDS API client<a class="headerlink" href="#install-the-cds-api-client" title="Permalink to this headline">¶</a></h4>
+<p>The next step is to install the <code class="docutils literal notranslate"><span class="pre">CDS</span> <span class="pre">API</span> <span class="pre">client</span></code>. You can do this with the package management system <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install cdsapi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cdsapi in c:\users\cxcs\anaconda3\lib\site-packages (0.5.1)
+Requirement already satisfied: tqdm in c:\users\cxcs\anaconda3\lib\site-packages (from cdsapi) (4.62.3)
+Requirement already satisfied: requests&gt;=2.5.0 in c:\users\cxcs\anaconda3\lib\site-packages (from cdsapi) (2.26.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\cxcs\anaconda3\lib\site-packages (from requests&gt;=2.5.0-&gt;cdsapi) (2021.10.8)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\cxcs\anaconda3\lib\site-packages (from requests&gt;=2.5.0-&gt;cdsapi) (1.26.7)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\cxcs\anaconda3\lib\site-packages (from requests&gt;=2.5.0-&gt;cdsapi) (3.2)
+Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\cxcs\anaconda3\lib\site-packages (from requests&gt;=2.5.0-&gt;cdsapi) (2.0.4)
+Requirement already satisfied: colorama in c:\users\cxcs\anaconda3\lib\site-packages (from tqdm-&gt;cdsapi) (0.4.4)
+</pre></div>
+</div>
+</div>
+</div>
+<br></div>
+<div class="section" id="use-the-cds-api-client-for-data-access">
+<h4>Use the CDS API client for data access<a class="headerlink" href="#use-the-cds-api-client-for-data-access" title="Permalink to this headline">¶</a></h4>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">CDS</span> <span class="pre">API</span></code> is installed, it can be used to request data from the Climate Data Store.</p>
+<p>Below, you see the principle of a <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">retrieval</span></code> request. You always have to make sure to first import the <code class="docutils literal notranslate"><span class="pre">cdsapi</span></code> and define a <code class="docutils literal notranslate"><span class="pre">cdsapi.Client()</span></code> before you are able to execute an <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">request</span></code>. You can use the <a class="reference external" href="https://cds.climate.copernicus.eu/cdsapp#%21/search?type=dataset">web interface</a> to browse through the datasets. At the end of the <code class="docutils literal notranslate"><span class="pre">&quot;Download</span> <span class="pre">data&quot;</span> <span class="pre">form</span></code>, there is the option to choose <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">API</span> <span class="pre">request</span></code>. If you click this button, the <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">request</span></code> appears (see example below), which you can copy paste into your coding workflow.</p>
+<br>
+<p><img alt="logo" src="_images/cdsapi_request.png" /></p>
+<br>
+<div class="alert alert-block alert-success">
+<b>NOTE</b>: <br>
+    For data originating from ECMWF's Meteorological and Archival System (MARS), data is stored on a grid with longitudes from 0 to 360 degrees. It can be reprojected to a regular geographic latitude-longitude grid, by setting the keyword argument <code>area</code> and <code>grid</code>. Per default, data is retrieved in <code>GRIB</code>. If you wish to retrieve the data in <code>netCDF</code>, you have to specify it by using the keyword argument <code>format</code>.</div>
+<br>
+</div>
+</div>
+<div class="section" id="further-resources">
+<h3>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://confluence.ecmwf.int/x/QhhsCg">Climate Data Store (ADS) documentation</a></p></li>
+<li><p><a class="reference external" href="https://confluence.ecmwf.int/x/RKOpD">Common Error Messages for CDS Requests</a></p></li>
+<li><p><a class="reference external" href="https://confluence.ecmwf.int/x/kjo1Cw">Climate Data Store (CDS) API Keywords</a></p></li>
+</ul>
+<hr></div>
+</div>
+<div class="section" id="example-data-request">
+<h2>Example data request<a class="headerlink" href="#example-data-request" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-id-era5-land-hourly-a-example-era5-land-hourly-data-from-1950-to-present">
+<h3><a id='era5-land_hourly'></a>Example: <strong>ERA5-Land hourly data from 1950 to present</strong><a class="headerlink" href="#a-id-era5-land-hourly-a-example-era5-land-hourly-data-from-1950-to-present" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Data used in <span class="xref myst">113_c3s_climate_indices</span></p>
+</div></blockquote>
+<p>CDS API name: <code class="docutils literal notranslate"><span class="pre">reanalysis-era5-land</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">['10m_u_component_of_wind',</span> <span class="pre">'10m_v_component_of_wind','2m_temperature']</span></code></p></li>
+<li><p>Year: <code class="docutils literal notranslate"><span class="pre">[1981</span> <span class="pre">to</span> <span class="pre">2020]</span></code></p></li>
+<li><p>Month: <code class="docutils literal notranslate"><span class="pre">12</span></code></p></li>
+<li><p>Day: <code class="docutils literal notranslate"><span class="pre">15</span></code></p></li>
+<li><p>Time: <code class="docutils literal notranslate"><span class="pre">12:00</span></code></p></li>
+<li><p>Area: <code class="docutils literal notranslate"><span class="pre">[60,</span> <span class="pre">-10,</span> <span class="pre">35,</span> <span class="pre">30]</span></code> # North, West, South, East</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">netcdf</span></code></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Note:</strong> the request above makes use of the keyword <code class="docutils literal notranslate"><span class="pre">area</span></code>, which enable you to retrieve only a geographical subset. The bounding box information are set as follows: <code class="docutils literal notranslate"><span class="pre">[N,</span> <span class="pre">W,</span> <span class="pre">S,</span> <span class="pre">E]</span></code>. When this keyword is set, the data is automatically projected to a grid from [-180, 180].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cdsapi</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+    <span class="s1">&#39;reanalysis-era5-land&#39;</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">&#39;10m_u_component_of_wind&#39;</span><span class="p">,</span> <span class="s1">&#39;10m_v_component_of_wind&#39;</span><span class="p">,</span> <span class="s1">&#39;2m_temperature&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">&#39;1981&#39;</span><span class="p">,</span> <span class="s1">&#39;1982&#39;</span><span class="p">,</span> <span class="s1">&#39;1983&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1984&#39;</span><span class="p">,</span> <span class="s1">&#39;1985&#39;</span><span class="p">,</span> <span class="s1">&#39;1986&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1987&#39;</span><span class="p">,</span> <span class="s1">&#39;1988&#39;</span><span class="p">,</span> <span class="s1">&#39;1989&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1990&#39;</span><span class="p">,</span> <span class="s1">&#39;1991&#39;</span><span class="p">,</span> <span class="s1">&#39;1992&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1993&#39;</span><span class="p">,</span> <span class="s1">&#39;1994&#39;</span><span class="p">,</span> <span class="s1">&#39;1995&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1996&#39;</span><span class="p">,</span> <span class="s1">&#39;1997&#39;</span><span class="p">,</span> <span class="s1">&#39;1998&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;1999&#39;</span><span class="p">,</span> <span class="s1">&#39;2000&#39;</span><span class="p">,</span> <span class="s1">&#39;2001&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2002&#39;</span><span class="p">,</span> <span class="s1">&#39;2003&#39;</span><span class="p">,</span> <span class="s1">&#39;2004&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2005&#39;</span><span class="p">,</span> <span class="s1">&#39;2006&#39;</span><span class="p">,</span> <span class="s1">&#39;2007&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2008&#39;</span><span class="p">,</span> <span class="s1">&#39;2009&#39;</span><span class="p">,</span> <span class="s1">&#39;2010&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2011&#39;</span><span class="p">,</span> <span class="s1">&#39;2012&#39;</span><span class="p">,</span> <span class="s1">&#39;2013&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2014&#39;</span><span class="p">,</span> <span class="s1">&#39;2015&#39;</span><span class="p">,</span> <span class="s1">&#39;2016&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2017&#39;</span><span class="p">,</span> <span class="s1">&#39;2018&#39;</span><span class="p">,</span> <span class="s1">&#39;2019&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;2020&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="s1">&#39;15&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s1">&#39;12:00&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;netcdf&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;area&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="mi">60</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span>
+            <span class="mi">30</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;./data/era5-land_eur_1981_2020.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-10 17:40:24,128 INFO Welcome to the CDS
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-10 17:40:24,130 INFO Sending request to https://cds.climate.copernicus.eu/api/v2/resources/reanalysis-era5-land
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-10 17:40:24,241 INFO Request is completed
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-05-10 17:40:24,243 INFO Downloading https://download-0015-clone.copernicus-climate.eu/cache-compute-0015/cache/data1/adaptor.mars.internal-1652192377.9561815-5007-12-faebcd34-8e28-4844-9f6e-d5e3ec4e0738.nc to ./data/era5-land_eur_1981_2020.nc (23M)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                      | 0.00/23.0M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                                                       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_1084</span><span class="o">/</span><span class="mf">1706028111.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">cdsapi</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">c</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">c</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;reanalysis-era5-land&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="p">{</span>
+
+<span class="nn">~\Anaconda3\lib\site-packages\cdsapi\api.py</span> in <span class="ni">retrieve</span><span class="nt">(self, name, request, target)</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span>         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/resources/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">request</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">350</span>             <span class="n">result</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span> 
+
+<span class="nn">~\Anaconda3\lib\site-packages\cdsapi\api.py</span> in <span class="ni">download</span><span class="nt">(self, target)</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span> 
+<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">173</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_download</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_length</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span> 
+<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="nd">@property</span>
+
+<span class="nn">~\Anaconda3\lib\site-packages\cdsapi\api.py</span> in <span class="ni">_download</span><span class="nt">(self, url, size, target)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>                 <span class="p">)</span> <span class="k">as</span> <span class="n">pbar</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>                     <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>                     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>                         <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>                             <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./data/era5-land_eur_1981_2020.nc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<hr><p></p>
+<span style='float:right'><p style=\"text-align:right;\">This project is licensed under <a href="./LICENSE">APACHE License 2.0</a>. | <a href=\"https://github.com/ecmwf-projects/copernicus-training">View on GitHub</a></span></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Copernicus Climate Change Service (C3S) Data Tutorials</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="01%20Climatology.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Climatologies</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By the Copernicus Climate Change Service (C3S), entrusted to ECMWF (European Centre for Medium-Range Weather Forecasts)<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
